@@ -9,6 +9,6 @@
     <title>Document</title>
 </head>
 <body>
-
+<h1>Courses</h1>
 </body>
 </html>
