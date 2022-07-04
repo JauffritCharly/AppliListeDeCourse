@@ -1,0 +1,54 @@
+body {
+    border: solid black 0.2em;
+    height: 100%;
+}
+
+main {
+    height: 38em;
+}
+
+.title {
+    margin: 1em 1em;
+    height: 6em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.soustittle {
+
+    border-top: solid black 0.2em;
+    border-bottom: solid black 0.2em;
+    height: 6em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu {
+    display: inline-flex;
+}
+
+.logo {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.icone {
+    width: 3em;
+
+
+}
+
+footer {
+    border-top: solid black 0.2em;
+    border-bottom: solid black 0.2em;
+    height: 6em;
+}
