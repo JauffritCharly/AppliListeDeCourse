@@ -26,29 +26,34 @@ main {
     justify-content: center;
 }
 
-.menu {
-    display: inline-flex;
-}
-
 .logo {
-    display: flex;
-    justify-content: flex-end;
+    margin: 10px 10px;
 }
 
 .nav {
-    display: flex;
-    justify-content: flex-end;
     width: 100%;
+    justify-content: space-between;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    margin: 10px 10px;
 }
 
 .icone {
     width: 3em;
-
-
 }
 
 footer {
     border-top: solid black 0.2em;
     border-bottom: solid black 0.2em;
     height: 6em;
+}
+
+.btnBottom {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
 }

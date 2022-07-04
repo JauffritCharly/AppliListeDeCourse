@@ -24,16 +24,17 @@
     <div class="nav">
         <div class="menu">
             <p>Liste bio</p>
-            <div class="logo">
-                <a href=""><img src="media/img/achats.png" alt="image d'un caddie" class="icone"></a>
-                <a href=""><img src="media/img/signe-de-la-croix.png" alt="croix sur un fond noir" class="icone"></a>
-            </div>
+        </div>
+        <div class="logo">
+            <a href=""><img src="media/img/achats.png" alt="image d'un caddie" class="icone"></a>
+            <a href=""><img src="media/img/signe-de-la-croix.png" alt="croix sur un fond noir" class="icone"></a>
         </div>
     </div>
 </main>
 <footer>
-
-
+    <div class="btnBottom">
+        <a href="Ajouter?"><img src="media/img/add.png" alt="bouton plus sur fond noir" class="icone"></a>
+    </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
