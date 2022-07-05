@@ -26,9 +26,10 @@
     </div>
 </header>
 <main>
-    <form action="AjouterServlet" method="post">
+    <form action="Ajouter" method="post">
         <label for="nom">Nom :</label>
         <input type="text" name="nom" id="nom" placeholder="Le nom de votre liste">
+        <input type="submit" value="Valider" name="nom">
     </form>
 </main>
 <footer>

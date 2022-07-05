@@ -8,5 +8,5 @@ import lombok.Data;
 
 public class Listes {
     private int id;
-    private String nom;
+    private String nomListe;
 }
