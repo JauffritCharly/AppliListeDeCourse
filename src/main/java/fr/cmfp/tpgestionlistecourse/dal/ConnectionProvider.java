@@ -1,4 +1,4 @@
-package fr.cmfp.tpgestionlistecourse.bo;
+package fr.cmfp.tpgestionlistecourse.dal;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -6,6 +6,7 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
+
 public abstract class ConnectionProvider {
     private static DataSource dataSource;
 
