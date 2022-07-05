@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class AjouterSQL {
     int idListe = 0;
 
-    public void insertListe(String nomListeArticles, String nomArticles) {
+    public void insertListe(String nomListeArticles) {
         try {
             Connection connection = ConnectionProvider.getConnection();
             if (nomListeArticles != null) {
@@ -26,19 +26,27 @@ public class AjouterSQL {
                 while (rs.next()) {
                     idListe = rs.getInt("id");
                 }
-
-
-                PreparedStatement pstmt3 = connection.prepareStatement("INSERT INTO articles (nom,id_liste) VALUES(?,?);");
-                pstmt3.setString(1, nomArticles);
-                pstmt3.setInt(2, idListe);
-                pstmt3.executeUpdate();
-
             }
             connection.close();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
+
+    public void insertArticle(String nomArticles) {
+        try {
+            Connection connection = ConnectionProvider.getConnection();
+            PreparedStatement pstmt3 = connection.prepareStatement("INSERT INTO articles (nom,id_liste) VALUES(?,?);");
+            pstmt3.setString(1, nomArticles);
+            pstmt3.setInt(2, idListe);
+            pstmt3.executeUpdate();
+
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
 
     public ArrayList<Articles> selectAll() {
         ArrayList<Articles> afficherArticles = new ArrayList<>();
@@ -54,6 +62,8 @@ public class AjouterSQL {
                 );
                 afficherArticles.add(article);
             }
+
+
             connection.close();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -62,3 +72,6 @@ public class AjouterSQL {
         return afficherArticles;
     }
 }
+
+
+

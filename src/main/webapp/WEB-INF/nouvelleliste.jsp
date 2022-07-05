@@ -1,9 +1,10 @@
+<%@ page import="fr.cmfp.tpgestionlistecourse.bo.Listes" %>
 <%@ page import="fr.cmfp.tpgestionlistecourse.bo.Articles" %>
 <%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
-  User: Charly
-  Date: 04/07/2022
-  Time: 16:59
+  User: Stagiaire
+  Date: 05/07/2022
+  Time: 11:37
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -15,7 +16,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles.css">
-    <title>Ajouter</title>
+    <title>Nouvelle liste</title>
 </head>
 <body>
 <header>
@@ -23,18 +24,18 @@
         <h1>Courses</h1>
     </div>
     <div class="soustittle">
-        <h2>Nouvelle liste </h2>
+        <h2>
+            <%= request.getAttribute("nom") %>
+        </h2>
     </div>
 </header>
 <main>
     <form action="Ajouter" method="post">
-        <label for="nom">Nom :</label>
-        <input type="text" name="nom" id="nom" placeholder="Le nom de votre liste">
+        <input type="hidden" name="nom" value="<%= request.getAttribute("nom") %>">
         <label for="article">Article :</label>
         <input type="text" name="article" id="article">
-        <input type="submit" src="media/img/add.png" name="saisie" class="icone">
+        <input type="image" src="media/img/add.png" name="saisie" class="icone">
     </form>
-
     <%
         ArrayList<Articles> afficherArticles = (ArrayList<Articles>) request.getAttribute("article");
     %>

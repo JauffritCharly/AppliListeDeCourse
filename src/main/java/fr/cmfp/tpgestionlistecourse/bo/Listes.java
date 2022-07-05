@@ -10,4 +10,8 @@ public class Listes {
     private int id;
     private String nomListe;
 
+
+    public Listes() {
+        this.nomListe = nomListe;
+    }
 }
