@@ -1,4 +1,5 @@
-<%--
+<%@ page import="fr.cmfp.tpgestionlistecourse.bo.Articles" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: Charly
   Date: 04/07/2022
@@ -33,7 +34,21 @@
         <input type="text" name="article" id="article">
         <input type="image" src="media/img/add.png" name="saisie" class="icone">
     </form>
-
+    <%
+        ArrayList<Articles> afficherArticles = (ArrayList<Articles>) request.getAttribute("article");
+    %>
+    <%
+        if (afficherArticles != null) {
+            for (Articles articles : afficherArticles) {
+    %>
+    <p><%= articles.getNomArticles() %>
+    </p>
+    <%
+        }
+    %>
+    <%
+        }
+    %>
 </main>
 <footer>
     <div class="btnBottom">

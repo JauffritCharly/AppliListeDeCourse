@@ -12,4 +12,7 @@ public class Articles {
     private boolean coche;
 
 
+    public Articles(String nom) {
+        this.nomArticles = nom;
+    }
 }

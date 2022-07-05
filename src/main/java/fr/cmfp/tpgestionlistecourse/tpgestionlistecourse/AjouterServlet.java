@@ -1,11 +1,13 @@
 package fr.cmfp.tpgestionlistecourse.tpgestionlistecourse;
 
+import fr.cmfp.tpgestionlistecourse.bo.Articles;
 import fr.cmfp.tpgestionlistecourse.dal.AjouterSQL;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 @WebServlet("/Ajouter")
 public class AjouterServlet extends HttpServlet {
@@ -20,6 +22,8 @@ public class AjouterServlet extends HttpServlet {
         String nomListeArticles = request.getParameter("nom");
         String nomArticles = request.getParameter("article");
         ajouterSQL.insertListe(nomListeArticles, nomArticles);
+        ArrayList<Articles> afficherArticles = ajouterSQL.selectAll();
+        request.setAttribute("article", afficherArticles);
         request.getRequestDispatcher("WEB-INF/ajouter.jsp").forward(request, response);
     }
 }
