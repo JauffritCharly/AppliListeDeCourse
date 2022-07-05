@@ -57,3 +57,9 @@ footer {
     margin-top: 20px;
 
 }
+
+.button {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5em 0.8em;
+}
