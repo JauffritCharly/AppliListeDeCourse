@@ -28,6 +28,6 @@ public class AjouterServlet extends HttpServlet {
         request.setAttribute("nom", nomListeArticles);
         request.setAttribute("article", afficherArticles);
         request.getRequestDispatcher("WEB-INF/nouvelleliste.jsp").forward(request, response);
-
+        //blablabla
     }
 }
