@@ -38,6 +38,7 @@
     </form>
     <%
         ArrayList<Articles> afficherArticles = (ArrayList<Articles>) request.getAttribute("article");
+
     %>
     <%
         if (afficherArticles != null) {

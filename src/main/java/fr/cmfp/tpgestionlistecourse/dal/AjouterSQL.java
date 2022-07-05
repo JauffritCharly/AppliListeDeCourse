@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class AjouterSQL {
-    int idListe = 0;
+
 
     public void insertListe(String nomListeArticles) {
         try {
@@ -20,12 +20,7 @@ public class AjouterSQL {
                 pstmt.setString(1, nomListeArticles);
                 pstmt.executeUpdate();
 
-                PreparedStatement pstmt2 = connection.prepareStatement("SELECT id FROM listes");
-                ResultSet rs = pstmt2.executeQuery();
 
-                while (rs.next()) {
-                    idListe = rs.getInt("id");
-                }
             }
             connection.close();
         } catch (SQLException e) {
@@ -33,22 +28,44 @@ public class AjouterSQL {
         }
     }
 
-    public void insertArticle(String nomArticles) {
+    public int select() {
+
+        int idListe = 0;
+
         try {
             Connection connection = ConnectionProvider.getConnection();
+            PreparedStatement pstmt2 = connection.prepareStatement("SELECT id FROM listes order by id desc limit 1 ");
+            ResultSet rs = pstmt2.executeQuery();
+
+            while (rs.next()) {
+                idListe = rs.getInt("id");
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return idListe;
+    }
+
+
+    public void insertArticle(String nomArticles, int id) {
+
+        try {
+            Connection connection = ConnectionProvider.getConnection();
+
             PreparedStatement pstmt3 = connection.prepareStatement("INSERT INTO articles (nom,id_liste) VALUES(?,?);");
             pstmt3.setString(1, nomArticles);
-            pstmt3.setInt(2, idListe);
+            pstmt3.setInt(2, id);
             pstmt3.executeUpdate();
 
-
+            connection.close();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
 
 
-    public ArrayList<Articles> selectAll() {
+    public ArrayList<Articles> selectAll(int idListe) {
         ArrayList<Articles> afficherArticles = new ArrayList<>();
         try {
             Connection connection = ConnectionProvider.getConnection();

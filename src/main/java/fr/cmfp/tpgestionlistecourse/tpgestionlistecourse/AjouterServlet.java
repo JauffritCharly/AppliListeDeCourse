@@ -23,11 +23,13 @@ public class AjouterServlet extends HttpServlet {
         String nomListeArticles = request.getParameter("nom");
         String nomArticles = request.getParameter("article");
         ajouterSQL.insertListe(nomListeArticles);
-        ajouterSQL.insertArticle(nomArticles);
-        ArrayList<Articles> afficherArticles = ajouterSQL.selectAll();
+        int id = ajouterSQL.select();
+        ajouterSQL.insertArticle(nomArticles, id);
+        ArrayList<Articles> afficherArticles = ajouterSQL.selectAll(id);
+      
         request.setAttribute("nom", nomListeArticles);
         request.setAttribute("article", afficherArticles);
         request.getRequestDispatcher("WEB-INF/nouvelleliste.jsp").forward(request, response);
-        //blablabla
+
     }
 }

@@ -34,7 +34,7 @@
 </main>
 <footer>
     <div class="btnBottom">
-        <a href="Ajouter?"><img src="media/img/add.png" alt="bouton plus sur fond noir" class="icone"></a>
+        <a href="Ajouter"><img src="media/img/add.png" alt="bouton plus sur fond noir" class="icone"></a>
     </div>
 </footer>
 

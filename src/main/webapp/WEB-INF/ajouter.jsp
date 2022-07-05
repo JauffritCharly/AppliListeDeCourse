@@ -1,11 +1,5 @@
 <%@ page import="fr.cmfp.tpgestionlistecourse.bo.Articles" %>
-<%@ page import="java.util.ArrayList" %><%--
-  Created by IntelliJ IDEA.
-  User: Charly
-  Date: 04/07/2022
-  Time: 16:59
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="fr">
