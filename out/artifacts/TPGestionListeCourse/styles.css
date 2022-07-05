@@ -1,0 +1,65 @@
+body {
+    border: solid black 0.2em;
+    height: 100%;
+}
+
+main {
+    height: 38em;
+}
+
+.title {
+    margin: 1em 1em;
+    height: 6em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.soustittle {
+
+    border-top: solid black 0.2em;
+    border-bottom: solid black 0.2em;
+    height: 6em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    margin: 10px 10px;
+}
+
+.nav {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    margin: 10px 10px;
+}
+
+.icone {
+    width: 3em;
+}
+
+footer {
+    border-top: solid black 0.2em;
+    border-bottom: solid black 0.2em;
+    height: 6em;
+}
+
+.btnBottom {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+.button {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5em 0.8em;
+}
