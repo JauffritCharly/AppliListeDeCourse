@@ -27,7 +27,8 @@
         </div>
         <div class="logo">
             <a href=""><img src="media/img/achats.png" alt="image d'un caddie" class="icone"></a>
-            <a href=""><img src="media/img/signe-de-la-croix.png" alt="croix sur un fond noir" class="icone"></a>
+            <a href="Effacer?"><img src="media/img/signe-de-la-croix.png" alt="croix sur un fond noir"
+                                    class="icone"></a>
         </div>
     </div>
 </main>
