@@ -9,7 +9,8 @@ public class AjouterSQL {
     public void insertListe(String nomListeArticles, String nomArticles) {
         try {
             Connection connection = ConnectionProvider.getConnection();
-            if (nomListeArticles == null) {
+            if (nomListeArticles != null) {
+
                 PreparedStatement pstmt = connection.prepareStatement("INSERT INTO listes(nom) VALUES(?);");
                 pstmt.setString(1, nomListeArticles);
                 pstmt.executeUpdate();
