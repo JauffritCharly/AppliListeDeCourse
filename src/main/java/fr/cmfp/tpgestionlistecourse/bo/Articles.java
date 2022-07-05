@@ -7,12 +7,9 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class Articles {
-    private int id;
-    private String nom;
+    private String nomArticles;
     private int idListe;
     private boolean coche;
-
-
 
 
 }

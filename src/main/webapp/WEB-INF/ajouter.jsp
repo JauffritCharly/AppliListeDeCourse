@@ -29,8 +29,11 @@
     <form action="Ajouter" method="post">
         <label for="nom">Nom :</label>
         <input type="text" name="nom" id="nom" placeholder="Le nom de votre liste">
-        <input type="submit" value="Valider" name="nom">
+        <label for="article">Article :</label>
+        <input type="text" name="article" id="article">
+        <input type="image" src="media/img/add.png" name="saisie" class="icone">
     </form>
+
 </main>
 <footer>
     <div class="btnBottom">

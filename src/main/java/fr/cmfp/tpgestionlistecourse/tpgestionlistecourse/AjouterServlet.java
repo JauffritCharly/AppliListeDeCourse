@@ -17,8 +17,9 @@ public class AjouterServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         AjouterSQL ajouterSQL = new AjouterSQL();
-        String nomListe = request.getParameter("nom");
-        ajouterSQL.insertListe(nomListe);
+        String nomListeArticles = request.getParameter("nom");
+        String nomArticles = request.getParameter("article");
+        ajouterSQL.insertListe(nomListeArticles, nomArticles);
         request.getRequestDispatcher("WEB-INF/ajouter.jsp").forward(request, response);
     }
 }
