@@ -24,26 +24,9 @@
     <form action="Ajouter" method="post">
         <label for="nom">Nom :</label>
         <input type="text" name="nom" id="nom" placeholder="Le nom de votre liste">
-        <label for="article">Article :</label>
-        <input type="text" name="article" id="article">
         <input type="submit" src="media/img/add.png" name="saisie" class="icone">
     </form>
 
-    <%
-        ArrayList<Articles> afficherArticles = (ArrayList<Articles>) request.getAttribute("article");
-    %>
-    <%
-        if (afficherArticles != null) {
-            for (Articles articles : afficherArticles) {
-    %>
-    <p><%= articles.getNomArticles() %>
-    </p>
-    <%
-        }
-    %>
-    <%
-        }
-    %>
 </main>
 <footer>
     <div class="btnBottom">

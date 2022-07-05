@@ -23,7 +23,7 @@
 <main>
     <div class="nav">
         <div class="menu">
-            <p>Liste bio</p>
+            <p>L</p>
         </div>
         <div class="logo">
             <a href=""><img src="media/img/achats.png" alt="image d'un caddie" class="icone"></a>

@@ -30,11 +30,11 @@
     </div>
 </header>
 <main>
-    <form action="Ajouter" method="post">
-        <input type="hidden" name="nom" value="<%= request.getAttribute("nom") %>">
+    <form action="Ajouterarticle" method="post">
+        <input type="hidden" name="cache" value="<%= request.getAttribute("nom") %>">
         <label for="article">Article :</label>
         <input type="text" name="article" id="article">
-        <input type="image" src="media/img/add.png" name="saisie" class="icone">
+        <input type="submit" name="saisie" class="icone">
     </form>
     <%
         ArrayList<Articles> afficherArticles = (ArrayList<Articles>) request.getAttribute("article");

@@ -1,6 +1,7 @@
 package fr.cmfp.tpgestionlistecourse.dal;
 
 import fr.cmfp.tpgestionlistecourse.bo.Articles;
+import fr.cmfp.tpgestionlistecourse.bo.Listes;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -28,23 +29,26 @@ public class AjouterSQL {
         }
     }
 
-    public int select() {
-
+    public Listes select() {
+        Listes liste = new Listes();
         int idListe = 0;
-
+        String nomListe;
         try {
             Connection connection = ConnectionProvider.getConnection();
-            PreparedStatement pstmt2 = connection.prepareStatement("SELECT id FROM listes order by id desc limit 1 ");
+            PreparedStatement pstmt2 = connection.prepareStatement("SELECT id, nom FROM listes order by id desc limit 1 ");
             ResultSet rs = pstmt2.executeQuery();
 
             while (rs.next()) {
                 idListe = rs.getInt("id");
+                nomListe = rs.getString("nom");
+                liste = new Listes(idListe, nomListe);
             }
+
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        return idListe;
+        return liste;
     }
 
 

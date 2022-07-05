@@ -1,6 +1,7 @@
 package fr.cmfp.tpgestionlistecourse.tpgestionlistecourse;
 
 import fr.cmfp.tpgestionlistecourse.bo.Articles;
+import fr.cmfp.tpgestionlistecourse.bo.Listes;
 import fr.cmfp.tpgestionlistecourse.dal.AjouterSQL;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -20,15 +21,9 @@ public class AjouterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         AjouterSQL ajouterSQL = new AjouterSQL();
-        String nomListeArticles = request.getParameter("nom");
-        String nomArticles = request.getParameter("article");
-        ajouterSQL.insertListe(nomListeArticles);
-        int id = ajouterSQL.select();
-        ajouterSQL.insertArticle(nomArticles, id);
-        ArrayList<Articles> afficherArticles = ajouterSQL.selectAll(id);
-      
-        request.setAttribute("nom", nomListeArticles);
-        request.setAttribute("article", afficherArticles);
+        String nomListe = request.getParameter("nom");
+        ajouterSQL.insertListe(nomListe);
+        request.setAttribute("nom", nomListe);
         request.getRequestDispatcher("WEB-INF/nouvelleliste.jsp").forward(request, response);
 
     }
