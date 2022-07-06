@@ -14,4 +14,8 @@ public class Listes {
     public Listes() {
         this.nomListe = nomListe;
     }
+
+    public Listes(String nom) {
+        this.nomListe = nom;
+    }
 }

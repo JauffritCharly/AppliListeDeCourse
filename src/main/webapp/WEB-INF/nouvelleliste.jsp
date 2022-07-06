@@ -54,10 +54,11 @@
     %>
 </main>
 <footer>
-    <div class="btnBottom">
-        <a href="index.jsp"><img src="media/img/fleche-droite-dans-un-cercle.png" alt="bouton plus sur fond noir"
-                                 class="icone"></a>
-    </div>
+    <form action="Index2Servlet" method="get">
+        <div class="btnBottom">
+            <input type="submit" name="valider" id="valider">
+        </div>
+    </form>
 </footer>
 
 </body>

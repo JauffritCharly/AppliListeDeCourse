@@ -92,6 +92,52 @@ public class AjouterSQL {
         }
         return afficherArticles;
     }
+
+    public Listes selectListe() {
+        Listes liste = new Listes();
+        int idListe = 0;
+        String nomListe;
+        try {
+            Connection connection = ConnectionProvider.getConnection();
+            PreparedStatement pstmt2 = connection.prepareStatement("SELECT id, nom FROM listes");
+            ResultSet rs = pstmt2.executeQuery();
+
+            while (rs.next()) {
+                idListe = rs.getInt("id");
+                nomListe = rs.getString("nom");
+                liste = new Listes(idListe, nomListe);
+            }
+
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return liste;
+    }
+
+    public ArrayList<Listes> tableauListe(String nomListe) {
+        ArrayList<Listes> tableauListe = new ArrayList<>();
+        try {
+            Connection connection = ConnectionProvider.getConnection();
+            PreparedStatement pstmt = connection.prepareStatement("SELECT nom FROM listes");
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                Listes liste = new Listes(
+                        rs.getString("nom")
+                );
+                tableauListe.add(liste);
+            }
+
+
+            connection.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+
+        }
+        return tableauListe;
+    }
+
 }
 
 
