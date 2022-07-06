@@ -1,6 +1,6 @@
 body {
     border: solid black 0.2em;
-    height: 100%;
+    height: auto;
 }
 
 main {
@@ -20,10 +20,19 @@ main {
 
     border-top: solid black 0.2em;
     border-bottom: solid black 0.2em;
-    height: 6em;
+    height: 7em;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    margin-top: 10px;
+
+}
+
+.soustittle p {
+    font-size: 35px;
+    align-items: flex-end;
+    text-decoration: underline #f503b0;
 }
 
 .logo {
@@ -60,16 +69,47 @@ footer {
 
 .button {
     display: flex;
-    justify-content: space-between;
-    margin: 1.5em 0.8em;
+    justify-content: space-evenly;
+    margin: 1.5em -8em;
 }
 
 .listedefinie {
     display: flex;
+    justify-content: space-around;
+    margin: 5px 15px 10px;
+    border-bottom: 1px solid black;
+
+    align-items: center;
+}
+
+.listouille {
+    width: 25%;
+    text-align: center;
+}
+
+.icone2 {
+    width: 2em;
 }
 
 .iconelistedefinie {
-    margin-left: 10%;
+    display: flex;
+    justify-content: center;
+    width: 40%;
 
+}
 
+.listeArticle {
+    margin-left: 2%;
+}
+
+fieldset {
+    border: 2px solid black;
+    margin: 2em;
+}
+
+legend {
+    text-align: center;
+    font-size: 2em;
+    float: none;
+    width: 45%;
 }

@@ -44,7 +44,7 @@ public class AjouterSQL {
                 liste = new Listes(idListe, nomListe);
             }
 
-
+            connection.close();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -108,7 +108,7 @@ public class AjouterSQL {
                 liste = new Listes(idListe, nomListe);
             }
 
-
+            connection.close();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -119,11 +119,12 @@ public class AjouterSQL {
         ArrayList<Listes> tableauListe = new ArrayList<>();
         try {
             Connection connection = ConnectionProvider.getConnection();
-            PreparedStatement pstmt = connection.prepareStatement("SELECT nom FROM listes");
+            PreparedStatement pstmt = connection.prepareStatement("SELECT id, nom FROM listes");
             ResultSet rs = pstmt.executeQuery();
 
             while (rs.next()) {
                 Listes liste = new Listes(
+                        rs.getInt("id"),
                         rs.getString("nom")
                 );
                 tableauListe.add(liste);
@@ -138,6 +139,56 @@ public class AjouterSQL {
         return tableauListe;
     }
 
+    public void deleteListe(int id) {
+        try {
+            Connection connection = ConnectionProvider.getConnection();
+            PreparedStatement pstmt = connection.prepareStatement(
+                    "DELETE FROM listes where id = ?"
+            );
+            pstmt.setInt(1, id);
+            pstmt.executeUpdate();
+            connection.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void updatePanier() {
+        try {
+            Connection connection = ConnectionProvider.getConnection();
+            PreparedStatement pstmt = connection.prepareStatement(
+                    "UPDATE articles SET coche = false"
+            );
+            pstmt.executeUpdate();
+            connection.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    public Listes selectId(int id) {
+        Listes liste = new Listes();
+        try {
+            Connection connection = ConnectionProvider.getConnection();
+            PreparedStatement pstmt = connection.prepareStatement(
+                    "SELECT id , nom FROM listes where id = ?"
+            );
+            pstmt.setInt(1, id);
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                int idListe = rs.getInt("id");
+                String nomListe = rs.getString("nom");
+                liste = new Listes(idListe, nomListe);
+            }
+
+            connection.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return liste;
+    }
 }
 
 

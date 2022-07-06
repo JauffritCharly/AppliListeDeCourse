@@ -1,5 +1,8 @@
 package fr.cmfp.tpgestionlistecourse.tpgestionlistecourse;
 
+import fr.cmfp.tpgestionlistecourse.bo.Articles;
+import fr.cmfp.tpgestionlistecourse.bo.Listes;
+import fr.cmfp.tpgestionlistecourse.dal.AjouterSQL;
 import fr.cmfp.tpgestionlistecourse.dal.ConnectionProvider;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -9,21 +12,21 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
-@WebServlet("/Effacer")
-public class EffacerServlet extends HttpServlet {
+@WebServlet("/pannier")
+public class PanierServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        try {
-            Connection connection = ConnectionProvider.getConnection();
-            PreparedStatement pstmt = connection.prepareStatement(
-                    "UPDATE articles SET coche = 0"
-            );
-            pstmt.executeUpdate();
-            connection.close();
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
+
+        AjouterSQL ajouterSQL = new AjouterSQL();
+        int idListe = Integer.parseInt(request.getParameter("id"));
+        Listes liste = ajouterSQL.selectId(idListe);
+        System.out.println(idListe);
+        request.setAttribute("nomListe", liste.getNomListe());
+        ArrayList<Articles> afficherArticles = ajouterSQL.selectAll(idListe);
+        request.setAttribute("article", afficherArticles);
+
 
         request.getRequestDispatcher("WEB-INF/panier.jsp").forward(request, response);
     }

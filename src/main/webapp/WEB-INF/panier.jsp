@@ -1,4 +1,5 @@
-<%--
+<%@ page import="fr.cmfp.tpgestionlistecourse.bo.Articles" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: Adrien
   Date: 05/07/2022
@@ -25,15 +26,39 @@
     </div>
     <div class="soustittle">
         <h2>Votre panier</h2>
+
     </div>
 </header>
 <main>
+    <fieldset class="champs">
+        <legend>
+            <%= request.getAttribute("nomListe") %>
+        </legend>
+        <%
+            ArrayList<Articles> afficherArticles = (ArrayList<Articles>) request.getAttribute("article");
 
+        %>
+        <%
+            if (afficherArticles != null) {
+                for (Articles articles : afficherArticles) {
+        %>
+        <div class="listeArticle"><input type="checkbox" name="nom" id="nom">
+            <label for="nom"><%= articles.getNomArticles() %>
+            </label>
+        </div>
+        <%
+            }
+        %>
+        <%
+            }
+        %>
+
+    </fieldset>
 </main>
 <footer>
     <div class="button">
         <div>
-            <a href="index.jsp"><img src="media/img/fleche%20gauche.png" alt="gomme pour effacer" class="icone"></a>
+            <a href="Index2Servlet"><img src="media/img/fleche%20gauche.png" alt="fleche retour" class="icone"></a>
         </div>
         <div>
             <a href="Ajouter?"><img src="media/img/rubber.png" alt="gomme pour effacer" class="icone"></a>

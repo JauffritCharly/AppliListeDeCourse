@@ -1,6 +1,7 @@
 <%@ page import="fr.cmfp.tpgestionlistecourse.bo.Listes" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="fr.cmfp.tpgestionlistecourse.dal.AjouterSQL" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -32,17 +33,19 @@
     %>
     <%
         if (tableauListe != null) {
-            for (Listes articles : tableauListe) {
+            for (Listes liste : tableauListe) {
     %>
     <div class="listedefinie">
-        <div>
-            <p><%= articles.getNomListe() %>
+        <div class="listouille">
+            <p><%= liste.getNomListe() %>
             </p>
         </div>
         <div class="iconelistedefinie">
-            <a href=""><img src="media/img/achats.png" alt="image d'un caddie" class="icone"></a>
-            <a href="Effacer?"><img src="media/img/signe-de-la-croix.png" alt="croix sur un fond noir"
-                                    class="icone"></a>
+            <a href="pannier?id=<%= liste.getId() %>"><img src="media/img/achats.png" alt="image d'un caddie"
+                                                           class="icone2"></a>
+            <a href="DeleteServlet?id=<%= liste.getId() %>"><img src="media/img/signe-de-la-croix.png"
+                                                                 alt="croix sur un fond noir"
+                                                                 class="icone2"></a>
         </div>
     </div>
     <%
@@ -63,6 +66,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
-</body>
 </body>
 </html>

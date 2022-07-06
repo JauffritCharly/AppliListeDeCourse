@@ -54,11 +54,9 @@
     %>
 </main>
 <footer>
-    <form action="Index2Servlet" method="get">
-        <div class="btnBottom">
-            <input type="submit" name="valider" id="valider">
-        </div>
-    </form>
+    <a href="Index2Servlet"><img src="media/img/fleche-droite-dans-un-cercle.png" alt="fleche vers le menu"
+                                 class="icone"></a>
+
 </footer>
 
 </body>

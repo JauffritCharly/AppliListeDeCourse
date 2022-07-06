@@ -30,8 +30,8 @@
 </main>
 <footer>
     <div class="btnBottom">
-        <a href="index.jsp"><img src="media/img/fleche-droite-dans-un-cercle.png" alt="bouton plus sur fond noir"
-                                 class="icone"></a>
+        <a href="index2.jsp"><img src="media/img/fleche-droite-dans-un-cercle.png" alt="bouton plus sur fond noir"
+                                  class="icone"></a>
     </div>
 </footer>
 
